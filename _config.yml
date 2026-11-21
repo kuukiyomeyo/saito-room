@@ -1,0 +1,17 @@
+title: "さいとーの部屋"
+description: "好きな音楽のこと、日々のこと。自分のために記録を残す小さな部屋です。"
+url: "https://kuukiyomeyo.github.io"
+baseurl: "/saito-room"
+lang: ja
+timezone: "Asia/Tokyo"
+permalink: "/:categories/:year/:month/:day/:title/"
+markdown: kramdown
+exclude:
+  - README.md
+  - templates
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
