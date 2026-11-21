@@ -3,7 +3,7 @@
   --bg: #faf9f6;
   --paper: #ffffff;
   --ink: #2a2d30;
-  --muted: #73787d;
+  --muted: #60676c;
   --line: #e7e7e2;
   --accent: #4b6679;
   --accent-light: #eaf0f3;
@@ -49,13 +49,13 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
 .entry .meta { color: var(--muted); font-size: 12px; }
 .entry h2 { font-size: 20px; line-height: 1.55; margin: 9px 0 12px; }
 .entry p { margin: 0; color: #5f666d; font-size: 15px; }
-.tag { display: inline-flex; background: #eef1f1; color: #657278; font-size: 12px; padding: 3px 12px; border-radius: 99px; margin-top: 16px; }
+.tag { display: inline-flex; background: #eef1f1; color: #5b676d; font-size: 12px; padding: 3px 12px; border-radius: 99px; margin-top: 16px; }
 .album-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; padding: 36px 0; }
 .album-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 25px 27px; }
 .album-card .disc { width: 60px; height: 60px; border-radius: 50%; border: 1px solid #c8d5de; background: radial-gradient(circle, #fafbfb 0 7px, #aec0cb 8px 9px, #dce5e9 10px 20px, #f8fafb 21px); margin-bottom: 18px; }
 .album-card h2 { font-size: 19px; margin: 0 0 10px; }
 .album-card p { color: var(--muted); font-size: 14px; margin: 0; }
-.footer { margin-top: 100px; border-top: 1px solid var(--line); padding: 28px 0 38px; display: flex; justify-content: space-between; gap: 12px; color: #92979b; font-size: 12px; }
+.footer { margin-top: 100px; border-top: 1px solid var(--line); padding: 28px 0 38px; display: flex; justify-content: space-between; gap: 12px; color: #62686e; font-size: 12px; }
 .skip { position: absolute; left: -9999px; top: 0; background: white; padding: 10px; }
 .skip:focus { left: 12px; top: 12px; z-index: 10; }
 @media (max-width: 600px) {
@@ -116,3 +116,13 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
   .post { padding-top: 28px; }
   .empty-state { padding: 35px 18px; }
 }
+
+/* 迷子のときのページ */
+.not-found { padding: 86px 0 105px; text-align: center; }
+.not-found .wrap { max-width: 650px; }
+.not-found-number { font-size: clamp(84px, 16vw, 150px); line-height: 1.2; letter-spacing: -.04em; font-weight: 650; color: #dde6ea; margin: 12px 0; }
+.not-found h1 { font-size: clamp(22px, 4vw, 30px); font-weight: 600; line-height: 1.6; margin: 0 0 14px; }
+.not-found p { font-size: 15px; color: var(--muted); margin: 0 auto 28px; }
+.not-found-link { display: inline-block; border: 1px solid #9eb0bb; color: var(--accent); border-radius: 8px; padding: 10px 19px; font-size: 14px; font-weight: 650; }
+.not-found-link:hover { background: var(--accent-light); }
+@media (max-width: 600px) { .not-found { padding: 58px 0 75px; } }

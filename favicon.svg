@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">さいとーの部屋 - 扉</title>
+  <rect x="0" y="0" width="64" height="64" rx="13" fill="#eaf0f3"/>
+  <rect x="17.5" y="8.5" width="29" height="47" rx="2.5" fill="#faf9f6" stroke="#4b6679" stroke-width="3.5"/>
+  <rect x="22.5" y="13.5" width="19" height="36.5" rx="1" fill="#eaf0f3" stroke="#4b6679" stroke-width="2"/>
+  <circle cx="37" cy="33" r="2.1" fill="#4b6679"/>
+  <path d="M14 57.5h36" stroke="#a9bbc4" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
