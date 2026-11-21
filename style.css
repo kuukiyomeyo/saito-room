@@ -69,3 +69,50 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
   .page-intro { padding: 56px 0 32px; }
   .footer { margin-top: 65px; }
 }
+
+/* 記事一覧と個別記事 */
+.collection-count { margin: 0 0 17px; font-size: 13px; color: var(--muted); }
+.entry-link:hover { color: var(--accent); }
+.entry .read-more, .read-more { color: var(--accent); display: inline-block; margin-top: 14px; font-size: 13px; }
+.entry .read-more:hover, .read-more:hover { text-decoration: underline; text-underline-offset: 4px; }
+.entry h3 { font-size: 20px; line-height: 1.55; margin: 9px 0 12px; }
+.empty-state { text-align: center; border: 1px dashed #cdd4d8; border-radius: var(--radius); padding: 55px 24px; background: rgba(255,255,255,.65); }
+.empty-icon { display: block; font-size: 30px; color: var(--accent); margin-bottom: 8px; }
+.empty-state h2, .empty-state h3 { margin: 12px 0 10px; font-size: 19px; font-weight: 600; }
+.empty-state p { margin: 0 auto; max-width: 510px; font-size: 14px; color: var(--muted); }
+.music-section { padding-top: 53px; }
+.music-section .album-grid { padding-top: 0; padding-bottom: 0; }
+.music-section .entries { padding-top: 0; padding-bottom: 0; }
+.music-section .disc { margin: 0 auto 18px; }
+.album-link { display: block; transition: border-color .15s, transform .15s; }
+.album-link:hover { border-color: #bdcbd3; transform: translateY(-2px); }
+.album-artist { color: var(--muted); font-size: 13px; margin-bottom: 3px; }
+.album-link h3 { margin: 0 0 12px; font-size: 20px; line-height: 1.5; }
+.album-link .disc { margin-left: 0; }
+.compact-empty { padding: 35px 24px; }
+.updates { border-top: 1px solid var(--line); }
+.update-row { display: grid; grid-template-columns: 115px minmax(0,1fr) 52px; gap: 18px; padding: 19px 4px; border-bottom: 1px solid var(--line); align-items: center; }
+.update-row:hover .update-title { color: var(--accent); }
+.update-date, .update-type { color: var(--muted); font-size: 12px; }
+.update-type { text-align: right; }
+.update-title { font-size: 15px; line-height: 1.5; }
+.post { padding-top: 40px; }
+.post .wrap { max-width: 740px; }
+.post-back { font-size: 14px; margin-bottom: 36px; }
+.post-header { padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.post-header h1 { font-size: clamp(27px, 5vw, 40px); line-height: 1.5; letter-spacing: .035em; margin: 11px 0 17px; }
+.post-info { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 13px; }
+.post-body { padding: 30px 0 26px; font-size: 16px; overflow-wrap: anywhere; line-height: 2.05; }
+.post-body p { margin: 0 0 1.6em; }
+.post-body h2 { font-size: 23px; margin: 2.2em 0 .75em; }
+.post-body h3 { font-size: 19px; margin: 1.8em 0 .65em; }
+.post-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.post-body ul, .post-body ol { padding-left: 1.4em; margin-bottom: 1.6em; }
+.post-body blockquote { border-left: 3px solid #bdcbd3; padding: 4px 0 4px 20px; margin: 24px 0; color: #626870; }
+.post-body img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 24px 0; }
+.post-end { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: 13px; }
+@media (max-width: 600px) {
+  .update-row { grid-template-columns: 78px minmax(0,1fr) 36px; gap: 9px; }
+  .post { padding-top: 28px; }
+  .empty-state { padding: 35px 18px; }
+}
