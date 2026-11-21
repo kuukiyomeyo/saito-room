@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post">
+  <div class="wrap">
+    <div class="post-back"><a class="text-link" href="{% if page.section == 'music' %}{{ '/music.html' | relative_url }}{% else %}{{ '/diary.html' | relative_url }}{% endif %}">← {% if page.section == 'music' %}音楽棚{% else %}日記帳{% endif %}へ戻る</a></div>
+    <header class="post-header">
+      <div class="eyebrow">{% if page.section == 'music' %}MUSIC{% else %}DIARY{% endif %}</div>
+      <h1>{{ page.title | escape }}</h1>
+      <div class="post-info">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+        {% if page.section == 'music' and page.artist %}<span>· {{ page.artist | escape }}</span>{% endif %}
+        {% if page.section == 'music' and page.release_year %}<span>· {{ page.release_year | escape }}</span>{% endif %}
+      </div>
+    </header>
+    <div class="post-body">
+      {{ content }}
+    </div>
+    <div class="post-end">ここまで読んでくれて、ありがとう。</div>
+  </div>
+</article>
