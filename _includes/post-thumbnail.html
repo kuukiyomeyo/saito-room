@@ -1,3 +1,16 @@
-{% if include.post.thumbnail and include.post.thumbnail != empty %}
-<img class="post-thumbnail" src="{{ include.post.thumbnail | escape }}" alt="" loading="lazy" decoding="async">
-{% endif %}
+{%- assign thumbnail = include.post.thumbnail -%}
+{%- assign media_prefix = '/assets/uploads/' | relative_url -%}
+{%- assign media_prefix_length = media_prefix | size -%}
+{%- assign image_tag = include.post.thumbnail_clipboard | split: '<img' | slice: 1 | first | split: '>' | first -%}
+{%- if image_tag contains ' src="' -%}
+  {%- assign pasted_thumbnail = image_tag | split: ' src="' | last | split: '"' | first -%}
+  {%- assign pasted_prefix = pasted_thumbnail | slice: 0, media_prefix_length -%}
+  {%- if pasted_prefix == media_prefix and pasted_thumbnail != media_prefix -%}
+    {%- assign thumbnail = pasted_thumbnail -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if thumbnail and thumbnail != empty -%}
+<img class="post-thumbnail" src="{{ thumbnail | escape_once }}" alt="" loading="lazy" decoding="async">
+{%- elsif include.show_disc -%}
+<div class="disc" aria-hidden="true"></div>
+{%- endif -%}
