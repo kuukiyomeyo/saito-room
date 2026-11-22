@@ -29,8 +29,8 @@
       <a class="brand" href="{{ '/' | relative_url }}">さいとーの部屋</a>
       <nav class="nav" aria-label="メインメニュー">
         <a href="{{ '/' | relative_url }}"{% if page.section == "home" %} aria-current="page"{% endif %}>ホーム</a>
-        <a href="{{ '/diary.html' | relative_url }}"{% if page.section == "diary" %} aria-current="page"{% endif %}>日記</a>
-        <a href="{{ '/music.html' | relative_url }}"{% if page.section == "music" %} aria-current="page"{% endif %}>音楽</a>
+        <a href="{{ '/diary/' | relative_url }}"{% if page.url == '/diary/' %} aria-current="page"{% elsif page.section == "diary" %} aria-current="location"{% endif %}>日記</a>
+        <a href="{{ '/music/' | relative_url }}"{% if page.url == '/music/' %} aria-current="page"{% elsif page.section == "music" %} aria-current="location"{% endif %}>音楽</a>
       </nav>
     </div>
   </header>

@@ -16,20 +16,19 @@ description: "好きな音楽のこと、日々のこと。自分のために記
   <div class="wrap">
     <div class="section-head"><h2>この部屋にあるもの</h2><span class="sub">Contents</span></div>
     <div class="cards">
-      <a class="card" href="{{ '/diary.html' | relative_url }}">
+      <a class="card" href="{{ '/diary/' | relative_url }}">
         <div class="symbol" aria-hidden="true">⌁</div>
         <h3>日記帳</h3>
         <p>その日のことや、ふと考えたこと。長くても短くても、気の向くままに。</p>
         <div class="go">日記を見る →</div>
       </a>
-      <a class="card" href="{{ '/music.html' | relative_url }}">
+      <a class="card" href="{{ '/music/' | relative_url }}">
         <div class="symbol" aria-hidden="true">♫</div>
         <h3>音楽棚</h3>
         <p>聴いてきた音楽、好きなアルバム、忘れたくない感想を置く場所。</p>
         <div class="go">音楽棚を見る →</div>
       </a>
     </div>
-    <div class="quiet-note">ここには、コメント欄も「いいね」もありません。気が向いたときに更新します。</div>
   </div>
 </section>
 {% assign diary_posts = site.posts | where: "section", "diary" %}
@@ -50,3 +49,6 @@ description: "好きな音楽のこと、日々のこと。自分のために記
   </div>
 </section>
 {% endif %}
+<div class="wrap">
+  <aside class="quiet-note">ここには、コメント欄も「いいね」もありません。気が向いたときに更新します。</aside>
+</div>

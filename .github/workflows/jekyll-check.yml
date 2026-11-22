@@ -16,9 +16,14 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
       - name: Build site (without publishing)
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+      - name: Check generated internal links
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 .github/check_internal_links.py ./_site "$SITE_URL"

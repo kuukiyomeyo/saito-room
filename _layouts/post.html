@@ -1,9 +1,16 @@
 ---
 layout: default
 ---
+{% if page.section == 'music' %}
+  {% assign section_name = '音楽棚' %}
+  {% assign section_url = '/music/' %}
+{% else %}
+  {% assign section_name = '日記帳' %}
+  {% assign section_url = '/diary/' %}
+{% endif %}
 <article class="post">
   <div class="wrap">
-    <div class="post-back"><a class="text-link" href="{% if page.section == 'music' %}{{ '/music.html' | relative_url }}{% else %}{{ '/diary.html' | relative_url }}{% endif %}">← {% if page.section == 'music' %}音楽棚{% else %}日記帳{% endif %}へ戻る</a></div>
+    <div class="post-back"><a class="text-link" href="{{ section_url | relative_url }}">← {{ section_name }}へ戻る</a></div>
     <header class="post-header">
       <div class="eyebrow">{% if page.section == 'music' %}MUSIC{% else %}DIARY{% endif %}</div>
       <h1>{{ page.title | escape }}</h1>
@@ -16,6 +23,9 @@ layout: default
     <div class="post-body">
       {{ content }}
     </div>
-    <div class="post-end">ここまで読んでくれて、ありがとう。</div>
+    <footer class="post-end">
+      <p>ここまで読んでくれて、ありがとう。</p>
+      <a class="text-link" href="{{ section_url | relative_url }}">← {{ section_name }}へ戻る</a>
+    </footer>
   </div>
 </article>

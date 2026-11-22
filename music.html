@@ -2,6 +2,7 @@
 layout: default
 title: "音楽棚"
 section: music
+permalink: /music/
 description: "さいとーの部屋の音楽棚。アルバムのレビューや、音楽についての考えごと。"
 ---
 <section class="page-intro">
@@ -14,11 +15,20 @@ description: "さいとーの部屋の音楽棚。アルバムのレビューや
 {% assign music_posts = site.posts | where: "section", "music" %}
 {% assign albums = music_posts | where: "kind", "album" %}
 {% assign notes = music_posts | where: "kind", "note" %}
+{% if albums.size == 0 and notes.size == 0 %}
+<section class="wrap music-section">
+  <div class="empty-state compact-empty">
+    <span class="empty-icon" aria-hidden="true">♫</span>
+    <h2>音楽棚は、これから。</h2>
+    <p>好きなアルバムの感想や音楽の思い出を、少しずつ置いていきます。</p>
+  </div>
+</section>
+{% endif %}
+{% if albums.size > 0 %}
 <section class="wrap music-section">
   <div class="section-head">
     <h2>アルバムの記録</h2><span class="sub">{{ albums.size }}件</span>
   </div>
-  {% if albums.size > 0 %}
   <div class="album-grid">
     {% for post in albums %}
     <a class="album-card album-link" href="{{ post.url | relative_url }}">
@@ -30,19 +40,13 @@ description: "さいとーの部屋の音楽棚。アルバムのレビューや
     </a>
     {% endfor %}
   </div>
-  {% else %}
-  <div class="empty-state compact-empty">
-    <div class="disc" aria-hidden="true"></div>
-    <h3>これから並んでいくアルバムたち。</h3>
-    <p>気になった作品も、何度も聴いた作品も。自分の言葉で記録していきます。</p>
-  </div>
-  {% endif %}
 </section>
+{% endif %}
+{% if notes.size > 0 %}
 <section class="wrap music-section">
   <div class="section-head">
     <h2>音楽について考えたこと</h2><span class="sub">{{ notes.size }}件</span>
   </div>
-  {% if notes.size > 0 %}
   <div class="entries music-notes">
     {% for post in notes %}
     <article class="entry">
@@ -53,11 +57,5 @@ description: "さいとーの部屋の音楽棚。アルバムのレビューや
     </article>
     {% endfor %}
   </div>
-  {% else %}
-  <div class="empty-state compact-empty">
-    <span class="empty-icon" aria-hidden="true">♫</span>
-    <h3>アルバム一枚では収まらない話も、ここに。</h3>
-    <p>アーティストのこと、音楽の思い出、ふと気になったことなど。</p>
-  </div>
-  {% endif %}
 </section>
+{% endif %}

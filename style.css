@@ -24,7 +24,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 80px; }
 .brand { font-weight: 700; letter-spacing: .05em; font-size: 18px; }
 .nav { display: flex; gap: 24px; flex-wrap: wrap; color: #555d64; font-size: 14px; }
-.nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+.nav a[aria-current] { color: var(--accent); font-weight: 700; }
 .nav a:hover, .text-link:hover { color: var(--accent); }
 .hero { padding: 88px 0 72px; border-bottom: 1px solid var(--line); }
 .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 650; }
@@ -62,10 +62,13 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
   .wrap { width: min(100% - 36px, 860px); }
   .site-header .wrap { min-height: 85px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 0; padding: 16px 0 11px; }
   .nav { gap: 22px; }
-  .hero { padding: 65px 0 57px; }
-  .section { padding-top: 48px; }
+  .hero { padding: 36px 0 32px; }
+  .hero h1 { margin-bottom: 16px; }
+  .section { padding-top: 30px; }
   .cards, .album-grid { grid-template-columns: 1fr; }
-  .card { min-height: 0; }
+  .card { min-height: 0; padding: 16px 20px; }
+  .card .symbol { margin-bottom: 4px; }
+  .card .go { margin-top: 8px; }
   .page-intro { padding: 56px 0 32px; }
   .footer { margin-top: 65px; }
 }
@@ -111,6 +114,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
 .post-body blockquote { border-left: 3px solid #bdcbd3; padding: 4px 0 4px 20px; margin: 24px 0; color: #626870; }
 .post-body img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 24px 0; }
 .post-end { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: 13px; }
+.post-end p { margin: 0 0 12px; }
+.post-end .text-link { display: inline-block; padding: 8px 0; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 600px) {
   .update-row { grid-template-columns: 78px minmax(0,1fr) 36px; gap: 9px; }
   .post { padding-top: 28px; }
