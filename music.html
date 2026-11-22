@@ -32,7 +32,11 @@ description: "さいとーの部屋の音楽棚。アルバムのレビューや
   <div class="album-grid">
     {% for post in albums %}
     <a class="album-card album-link" href="{{ post.url | relative_url }}">
+      {% if post.thumbnail and post.thumbnail != empty %}
+      {% include post-thumbnail.html post=post %}
+      {% else %}
       <div class="disc" aria-hidden="true"></div>
+      {% endif %}
       <div class="album-artist">{{ post.artist | escape }}{% if post.release_year %} · {{ post.release_year | escape }}{% endif %}</div>
       <h3>{{ post.title | escape }}</h3>
       <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 90 | escape }}</p>
@@ -50,6 +54,7 @@ description: "さいとーの部屋の音楽棚。アルバムのレビューや
   <div class="entries music-notes">
     {% for post in notes %}
     <article class="entry">
+      {% include post-thumbnail.html post=post %}
       <div class="meta">{{ post.date | date: "%Y.%m.%d" }}</div>
       <h3><a class="entry-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
       <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 110 | escape }}</p>

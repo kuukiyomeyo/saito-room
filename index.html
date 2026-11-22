@@ -41,7 +41,10 @@ description: "好きな音楽のこと、日々のこと。自分のために記
       {% for post in site.posts limit: 5 %}
       <a class="update-row" href="{{ post.url | relative_url }}">
         <span class="update-date">{{ post.date | date: "%Y.%m.%d" }}</span>
-        <span class="update-title">{{ post.title | escape }}</span>
+        <span class="update-summary">
+          {% include post-thumbnail.html post=post %}
+          <span class="update-title">{{ post.title | escape }}</span>
+        </span>
         <span class="update-type">{% if post.section == "music" %}音楽{% else %}日記{% endif %}</span>
       </a>
       {% endfor %}

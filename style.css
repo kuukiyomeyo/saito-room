@@ -45,7 +45,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
 .page-intro { padding: 72px 0 38px; border-bottom: 1px solid var(--line); }
 .page-intro p { margin: 18px 0 0; color: var(--muted); max-width: 640px; }
 .entries { padding: 36px 0 30px; }
-.entry { background: var(--paper); border: 1px solid var(--line); padding: 27px 30px; border-radius: var(--radius); margin-bottom: 16px; }
+.entry { display: flow-root; background: var(--paper); border: 1px solid var(--line); padding: 27px 30px; border-radius: var(--radius); margin-bottom: 16px; }
 .entry .meta { color: var(--muted); font-size: 12px; }
 .entry h2 { font-size: 20px; line-height: 1.55; margin: 9px 0 12px; }
 .entry p { margin: 0; color: #5f666d; font-size: 15px; }
@@ -98,7 +98,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-
 .update-row:hover .update-title { color: var(--accent); }
 .update-date, .update-type { color: var(--muted); font-size: 12px; }
 .update-type { text-align: right; }
-.update-title { font-size: 15px; line-height: 1.5; }
+.update-title { min-width: 0; overflow-wrap: anywhere; font-size: 15px; line-height: 1.5; }
+.post-thumbnail { display: block; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; background: var(--accent-light); }
+.entry .post-thumbnail { float: right; width: clamp(64px, 20%, 116px); margin: 0 0 8px 12px; }
+.album-card .post-thumbnail { width: 100%; aspect-ratio: 16 / 9; margin-bottom: 16px; }
+.update-summary { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.update-summary .post-thumbnail { width: 42px; flex: none; }
 .post { padding-top: 40px; }
 .post .wrap { max-width: 740px; }
 .post-back { font-size: 14px; margin-bottom: 36px; }

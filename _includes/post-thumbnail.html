@@ -1,0 +1,3 @@
+{% if include.post.thumbnail and include.post.thumbnail != empty %}
+<img class="post-thumbnail" src="{{ include.post.thumbnail | escape }}" alt="" loading="lazy" decoding="async">
+{% endif %}

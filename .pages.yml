@@ -1,3 +1,11 @@
+media:
+  - name: article_images
+    label: 記事の画像
+    input: assets/uploads
+    output: /saito-room/assets/uploads
+    extensions: [png, jpg, jpeg, webp, gif, avif]
+    rename: random
+
 settings:
   content:
     merge: true
@@ -21,6 +29,16 @@ components:
     label: 本文
     type: rich-text
     required: true
+    description: 画像をコピーして本文欄に貼り付けられます。貼り付けた画像はその場でアップロードされます。
+    options:
+      switcher: false
+      media: article_images
+  thumbnail:
+    label: サムネイル
+    type: image
+    description: 設定すると、トップの新着と記事一覧に表示されます。
+    options:
+      media: article_images
   entry_id:
     type: uuid
     hidden: true
@@ -42,9 +60,10 @@ content:
         order: desc
     fields:
       - { name: title, component: title }
+      - { name: body, component: body }
+      - { name: thumbnail, component: thumbnail }
       - { name: date, component: date }
       - { name: description, component: description }
-      - { name: body, component: body }
       - { name: entry_id, component: entry_id }
       - { name: section, type: string, hidden: true, default: diary }
       - { name: category, type: string, hidden: true, default: diary }
@@ -65,11 +84,12 @@ content:
         order: desc
     fields:
       - { name: title, component: title }
-      - { name: date, component: date }
+      - { name: body, component: body }
+      - { name: thumbnail, component: thumbnail }
       - { name: artist, label: アーティスト, type: string }
       - { name: release_year, label: 発売年, type: string }
+      - { name: date, component: date }
       - { name: description, component: description }
-      - { name: body, component: body }
       - { name: entry_id, component: entry_id }
       - { name: section, type: string, hidden: true, default: music }
       - { name: kind, type: string, hidden: true, default: album }
@@ -91,9 +111,10 @@ content:
         order: desc
     fields:
       - { name: title, component: title }
+      - { name: body, component: body }
+      - { name: thumbnail, component: thumbnail }
       - { name: date, component: date }
       - { name: description, component: description }
-      - { name: body, component: body }
       - { name: entry_id, component: entry_id }
       - { name: section, type: string, hidden: true, default: music }
       - { name: kind, type: string, hidden: true, default: note }

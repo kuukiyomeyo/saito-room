@@ -18,6 +18,7 @@ description: "さいとーの部屋の日記帳。日々のこと、考えたこ
     <p class="collection-count">{{ diary_posts.size }}件の日記</p>
     {% for post in diary_posts %}
     <article class="entry">
+      {% include post-thumbnail.html post=post %}
       <div class="meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y.%m.%d" }}</time></div>
       <h2><a class="entry-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
       <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 110 | escape }}</p>
