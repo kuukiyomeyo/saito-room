@@ -9,6 +9,8 @@
 - `index.html`：玄関。日記・音楽棚への入口と最新更新
 - `diary.html`：日記の一覧
 - `music.html`：アルバムレビューと音楽ノートの一覧
+- `write.html`：記事の作成・編集画面への入口
+- `.pages.yml`：Pages CMSの編集項目と記事の保存場所
 - `_layouts/default.html`：全ページ共通のメニューとフッター
 - `_layouts/post.html`：記事本文のレイアウト
 - `style.css`：共通の見た目
@@ -17,12 +19,19 @@
 
 GitHub Pagesの標準機能であるJekyllを利用。記事を増やすと一覧とトップの新着欄が自動更新されます。
 
-## 記事を追加する（AI運営の基本）
+## ブラウザから記事を書く
+
+1. サイトのフッターにある[記事を書く](https://kuukiyomeyo.github.io/saito-room/write/)を開く。
+2. 初回のみ、GitHubでPages CMSを連携する。「Only select repositories」で `saito-room` のみを選ぶ。
+3. 日記・アルバムの感想・音楽ノートを選び、GitHubアカウントでログインして入力する。既存の記事は「公開済みの記事を編集する」から開ける。
+4. 編集画面で「Save」を押すと `main` に保存され、GitHub Pagesのビルド完了後に公開サイトに反映される。公開の準備ができてから保存する。
+
+## AIと記事の案を作る
 
 1. 日記や音楽の感想をさいとーが用意する。
 2. ChatGPTが文章を整えて確認用の案を作る。事実や本人の意見を勝手に作らない。
 3. さいとーが「この内容で掲載して」と承認する。
-4. ChatGPTが `_posts/YYYY-MM-DD-english-slug.md` というファイルを追加する。
+4. ChatGPTが `_posts/diary/`・`_posts/albums/`・`_posts/notes/` の該当フォルダに `YYYY-MM-DD-english-slug.md` を追加する。
 5. `main` ブランチへの変更がGitHub Pagesに反映される。
 
 記事のひな形は `templates/diary-example.md` と `templates/music-album-example.md` と `templates/music-note-example.md` にあります。

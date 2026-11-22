@@ -1,0 +1,26 @@
+---
+layout: default
+title: 記事を書く
+permalink: /write/
+description: さいとーの部屋の記事を書くための入口です。
+---
+{% assign editor = 'https://app.pagescms.org/kuukiyomeyo/saito-room/main' %}
+<section class="page-intro">
+  <div class="wrap">
+    <h1 class="page-title">記事を書く</h1>
+    <p>記事の種類を選び、GitHubアカウントでログインします。本文を書いたら、編集画面の「Save」で公開できます。サイトへの反映には少し時間がかかります。</p>
+  </div>
+</section>
+<section class="wrap write-page" aria-labelledby="new-post">
+  <h2 id="new-post">新しい記事</h2>
+  <div class="write-options">
+    <a class="write-option" href="{{ editor }}/collection/diary/new">日記を書く <span aria-hidden="true">→</span></a>
+    <a class="write-option" href="{{ editor }}/collection/albums/new">アルバムの感想を書く <span aria-hidden="true">→</span></a>
+    <a class="write-option" href="{{ editor }}/collection/notes/new">音楽ノートを書く <span aria-hidden="true">→</span></a>
+  </div>
+  <p><a class="write-link" href="{{ editor }}">公開済みの記事を編集する</a></p>
+  <details class="write-setup">
+    <summary>初めて使うとき</summary>
+    <p><a class="write-link" href="https://github.com/apps/pages-cms/installations/new">GitHubでPages CMSを連携</a>し、「Only select repositories」で <code>saito-room</code> だけを選んでください。その後、Pages CMSに同じGitHubアカウントでログインします。</p>
+  </details>
+</section>

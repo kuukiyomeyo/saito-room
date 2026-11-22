@@ -1,0 +1,100 @@
+settings:
+  content:
+    merge: true
+
+components:
+  title:
+    label: タイトル
+    type: string
+    required: true
+  date:
+    label: 日付
+    type: date
+    required: true
+    description: 日本時間。今日までの日付を選んでください。公開後に日付を変えると、記事のURLも変わります。
+    options:
+      format: "yyyy-MM-dd HH:mm:ss '+0900'"
+  description:
+    label: 一覧に載せる紹介文
+    type: text
+  body:
+    label: 本文
+    type: rich-text
+    required: true
+  entry_id:
+    type: uuid
+    hidden: true
+
+content:
+  - name: diary
+    label: 日記
+    type: collection
+    path: _posts/diary
+    filename: "{date}-{entry_id}.md"
+    format: yaml-frontmatter
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, component: title }
+      - { name: date, component: date }
+      - { name: description, component: description }
+      - { name: body, component: body }
+      - { name: entry_id, component: entry_id }
+      - { name: section, type: string, hidden: true, default: diary }
+      - { name: category, type: string, hidden: true, default: diary }
+
+  - name: albums
+    label: アルバムの感想
+    type: collection
+    path: _posts/albums
+    filename: "{date}-{entry_id}.md"
+    format: yaml-frontmatter
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, artist, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, component: title }
+      - { name: date, component: date }
+      - { name: artist, label: アーティスト, type: string }
+      - { name: release_year, label: 発売年, type: string }
+      - { name: description, component: description }
+      - { name: body, component: body }
+      - { name: entry_id, component: entry_id }
+      - { name: section, type: string, hidden: true, default: music }
+      - { name: kind, type: string, hidden: true, default: album }
+      - { name: category, type: string, hidden: true, default: music }
+
+  - name: notes
+    label: 音楽ノート
+    type: collection
+    path: _posts/notes
+    filename: "{date}-{entry_id}.md"
+    format: yaml-frontmatter
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, component: title }
+      - { name: date, component: date }
+      - { name: description, component: description }
+      - { name: body, component: body }
+      - { name: entry_id, component: entry_id }
+      - { name: section, type: string, hidden: true, default: music }
+      - { name: kind, type: string, hidden: true, default: note }
+      - { name: category, type: string, hidden: true, default: music }
