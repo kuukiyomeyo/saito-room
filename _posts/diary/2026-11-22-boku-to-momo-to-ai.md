@@ -7,6 +7,8 @@ categories:
 description: 妻とハムスターのゆきみちゃん、そしてAIくんたちと始める最初の日記。
 entry_id: 47f4dda8-7b03-44d5-9753-64735b454d6d
 category: diary
+thumbnail_clipboard: <p></p>
+thumbnail: /saito-room/assets/uploads/mwrn4kjn-zxwowr8b.webp
 ---
 こんにちは。この記事を書いているさいとーです。33歳です。
 
